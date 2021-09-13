@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='iris_fpv_cam'>
+
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+    <include>
+      <uri>model://mb1240-xl-ez4</uri>
+      <pose>0.2 0 0 0 0 0</pose>
+    </include>
+    <joint name="mb1240-xl-ez4_joint" type="fixed">
+      <child>mb1240-xl-ez4::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://mb1240-xl-ez4-left</uri>
+      <pose>0.2 0 0 0 0 0.5236</pose>
+    </include>
+    <joint name="mb1240-xl-ez4_joint_left" type="fixed">
+      <child>mb1240-xl-ez4-left::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://mb1240-xl-ez4-right</uri>
+      <pose>0.2 0 0 0 0 -0.5236</pose>
+    </include>
+    <joint name="mb1240-xl-ez4_joint_right" type="fixed">
+      <child>mb1240-xl-ez4-right::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
